@@ -17,10 +17,10 @@
                       <div v-if="index!=curNumber"
                       >
                           <div style="position:relative">
-                              <el-image :src="'/avatar/'+(index+1)+'.png'" 
+                              <el-image :src="require('@/assets/avatar/'+(index+1)+'.png')" 
                               style="width:5vw;" >
                               </el-image>
-                              <el-image :src="'/out.png'" 
+                              <el-image :src="require('@/assets/out.png')" 
                               style="position:relative;
                               top:-20%;
                               margin-top: -200%;margin-bottom: 0;width: 5vw;" 
@@ -87,14 +87,14 @@
                   <div>
                       <h1>一等奖</h1>
                       <div v-if="prizes[0][0]!=-1">
-                          <el-image :src="'/avatar/'+(prizes[0][0]+1)+'.png'" 
+                          <el-image :src="require('@/assets/avatar/'+(prizes[0][0]+1)+'.png')" 
                           style="width:100%" 
                           >
                           </el-image>
                           {{name[prizes[0][0]]}}
                       </div>
                       <div v-else>
-                          <el-image :src="'/avatar/none.png'" 
+                          <el-image :src="require('@/assets/avatar/none.png')" 
                               style="width:5vw" >
                           </el-image>
                           <br>
@@ -105,14 +105,14 @@
                       <h2>二等奖</h2>
                       <div v-for="(item,index) in prizes[1]" :key="index" style="width: 15%;display: inline-block;margin-left: 5%;">
                           <div v-if="prizes[1][index]!=-1">
-                              <el-image :src="'/avatar/'+(prizes[1][index]+1)+'.png'" 
+                              <el-image :src="require('@/assets/avatar/'+(prizes[1][index]+1)+'.png')" 
                               style="width:100%"
                               >
                               </el-image>
                               {{name[prizes[1][index]]}}
                           </div>
                           <div v-else>
-                              <el-image :src="'/avatar/none.png'" 
+                              <el-image :src="require('@/assets/avatar/none.png')" 
                                   style="width:100%" >
                               </el-image>
                               <br>
@@ -124,14 +124,14 @@
                       <h3>三等奖</h3>
                       <div v-for="(item,index) in prizes[2]" :key="index" style="width: 10%;display: inline-block;margin-left: 5%;">
                           <div v-if="prizes[2][index]!=-1">
-                              <el-image :src="'/avatar/'+(prizes[2][index]+1)+'.png'" 
+                              <el-image :src="require('@/assets/avatar/'+(prizes[2][index]+1)+'.png')" 
                               style="width:100%"
                               >
                               </el-image>
                               {{name[prizes[2][index]]}}
                           </div>
                           <div v-else>
-                              <el-image :src="'/avatar/none.png'" 
+                              <el-image :src="require('@/assets/avatar/none.png')" 
                                   style="width:100%" >
                               </el-image>
                               <br>
@@ -266,17 +266,17 @@
       },
       playSE() {
         let audio = new Audio()
-        audio.src = "/go.mp3"
+        audio.src = require('@/assets/go.mp3')
         audio.play();
       },
       playFail() {
         let audio = new Audio()
-        audio.src = "/die.wav"
+        audio.src = require('@/assets/die.wav')
         audio.play();
       },
       playHappy() {
         let audio = new Audio()
-        audio.src = "/yes.mp3"
+        audio.src = require('@/assets/yes.mp3')
         audio.play();
       },
       yuesefuGo() {

@@ -1,4 +1,7 @@
 # club-lottery
+俱乐部抽奖工具
+- 可指定约瑟夫数
+- 需要导入头像和昵称
 
 ## Project setup
 ```
@@ -19,6 +22,3 @@ npm run build
 ```
 npm run lint
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).

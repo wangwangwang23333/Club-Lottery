@@ -36,10 +36,10 @@
                       </div>
                       <div v-else style="box-shadow: rgb(85, 91, 255) 0px 0px 0px 3px, rgb(31, 193, 27) 0px 0px 0px 6px, rgb(255, 217, 19) 0px 0px 0px 9px, rgb(255, 156, 85) 0px 0px 0px 12px, rgb(255, 85, 85) 0px 0px 0px 15px;">
                           <div style="position:relative">
-                              <el-image :src="'/avatar/'+(index+1)+'.png'" 
+                              <el-image :src="require('@/assets/avatar/'+(index+1)+'.png')" 
                               style="width:5vw;" >
                               </el-image>
-                              <el-image :src="'/out.png'" 
+                              <el-image :src="require('@/assets/out.png')" 
                               style="position:relative;
                               top:-20%;
                               margin-top: -200%;margin-bottom: 0;width: 4vw;" 

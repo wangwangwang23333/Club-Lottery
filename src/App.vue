@@ -55,7 +55,7 @@
                       </div>
                   </div>
               </el-col>
-              <el-col :span="3">
+              <el-col :span="3" v-if="startLottery">
                   <div>约瑟夫数为：
                       <br>
                       <h1 style="color: white;">{{yuesefu}}</h1>
@@ -82,8 +82,14 @@
                   </div>
                   
               </el-col>
+
+              <el-col :span="6" v-else>
+                <el-button @click="changeLottery()"
+                style="margin-top: 50vh;
+                margin-left:15vw;width: 10vw;height: 10vh;">开始抽奖</el-button>
+              </el-col>
   
-              <el-col :span="7">
+              <el-col :span="7" v-if="startLottery">
                   <div>
                       <h1>一等奖</h1>
                       <div v-if="prizes[0][0]!=-1">
@@ -151,6 +157,8 @@
   export default {
     data() {
       return {
+        //开始抽奖
+        startLottery:false,
         //约瑟夫数字
         yuesefu: 7,
         //当前计数
@@ -201,6 +209,9 @@
       }
     },
     methods: {
+      changeLottery(){
+        this.startLottery = true;
+      },
       format(percentage) {
         percentage;
         return `${this.remainPerson} / ${this.name.length}`;

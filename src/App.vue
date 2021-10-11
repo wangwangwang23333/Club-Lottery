@@ -5,6 +5,30 @@
   height:100vh !important;
   text-align: center;
   ">
+      <el-dialog
+      title="淘汰历史"
+      :visible.sync="dialogVisible"
+      width="30%">
+      <el-table
+      :data="tableData"
+      stripe
+      height="250"
+      style="width: 100%">
+      <el-table-column
+        prop="index"
+        label="淘汰序号"
+        width="180">
+      </el-table-column>
+      <el-table-column
+        prop="name"
+        label="昵称"
+        width="180">
+      </el-table-column>
+    </el-table>
+      <span slot="footer" class="dialog-footer" style="text-align: center;">
+        <el-button type="primary" @click="dialogVisible = false" style="margin-right: 40%;">确 定</el-button>
+      </span>
+    </el-dialog>
       <div style=" background-image: linear-gradient(135deg, #2b332b 0%, #2b332b 3%, #147bfc4a 3%);
       height: 100%;
       backdrop-filter: blur(15px);
@@ -80,7 +104,7 @@
                     style="margin-top: 10%;width: 75%;"
                     v-model="curSpeed" :min="1" :max="10" label="描述文字"></el-input-number>
                   </div>
-                  
+                  <el-button @click="dialogVisible=true" style="margin-top: 20%;">淘汰历史</el-button>
               </el-col>
 
               <el-col :span="6" v-else>
@@ -159,6 +183,10 @@
       return {
         //开始抽奖
         startLottery:false,
+        //展示淘汰名单
+        dialogVisible:false,
+        //淘汰名单
+        tableData: [],
         //约瑟夫数字
         yuesefu: 7,
         //当前计数
@@ -201,7 +229,6 @@
       for (let i = 0; i < this.prizes.length; ++i) {
         this.prizeCount += this.prizes[i].length
       }
-      console.log(this.prizeCount)
     },
     computed: {
       remainPercent() {
@@ -218,7 +245,6 @@
       },
       getPrize(index) {
         if (this.remainPerson < this.prizeCount) {
-          console.log('hello?')
           this.prizeCount -= 1
           //把最后面的奖给它
           for (let i = this.prizes.length - 1; i >= 0; --i) {
@@ -226,7 +252,6 @@
               if (this.prizes[i][j] == -1) {
                 this.prizes[i][j] = index
                 this.$set(this.prizes[i], j, index)
-                console.log(i, j, this.prizes[i][j])
                 //播放获得物品音效
                 this.playHappy();
                 return
@@ -310,7 +335,6 @@
           this.curCount += 1
           this.curNumber = this.getNextNumber()
 
-          console.log(this.curNumber)
           if (this.curCount == this.yuesefu) {
             clearInterval(this.timeCount)
             this.timeCount = null
@@ -322,6 +346,12 @@
               message: '淘汰了【' + this.name[this.curNumber] + '】',
               type: 'warning'
             });
+            //加入淘汰历史
+            this.tableData.splice(0,0,{
+              index:this.remainPerson+1,
+              name:this.name[this.curNumber]
+            })
+            //this.tableData.push()
             this.getPrize(this.curNumber)
 
           }

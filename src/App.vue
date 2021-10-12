@@ -42,12 +42,12 @@
                       >
                           <div style="position:relative">
                               <el-image :src="require('@/assets/avatar/'+(index+1)+'.png')" 
-                              style="width:5vw;" >
+                              style="width:1.3vw;" >
                               </el-image>
                               <el-image :src="require('@/assets/out.png')" 
                               style="position:relative;
                               top:-20%;
-                              margin-top: -200%;margin-bottom: 0;width: 5vw;" 
+                              margin-top: -200%;margin-bottom: 0;width: 1.3vw;margin-left:-30%" 
                               v-if="!survive[index]">
                               </el-image>
                           </div>
@@ -61,12 +61,12 @@
                       <div v-else style="box-shadow: rgb(85, 91, 255) 0px 0px 0px 3px, rgb(31, 193, 27) 0px 0px 0px 6px, rgb(255, 217, 19) 0px 0px 0px 9px, rgb(255, 156, 85) 0px 0px 0px 12px, rgb(255, 85, 85) 0px 0px 0px 15px;">
                           <div style="position:relative">
                               <el-image :src="require('@/assets/avatar/'+(index+1)+'.png')" 
-                              style="width:5vw;" >
+                              style="width:1.3vw;" >
                               </el-image>
                               <el-image :src="require('@/assets/out.png')" 
                               style="position:relative;
                               top:-20%;
-                              margin-top: -200%;margin-bottom: 0;width: 4vw;" 
+                              margin-top: -200%;margin-bottom: 0;width: 1.3vw;margin-left:-30%" 
                               v-if="!survive[index]">
                               </el-image>
                           </div>
@@ -198,17 +198,81 @@
         //当前播放速度
         curSpeed:1,
         name: [
-          "徐满心",
-          "毛哥",
+          "胡顺",
+          "林英豪",
+          "lxy",
+          "潘志强",
+          "崔敬文",
+          "叶登旭",
+          "张子涵",
+          "俱乐部",
+          "施朱博",
+          "崔宇帆",
+          "张泰圣",
+          "my",
+          "kenny",
+          "王晨",
+          "刘彦辰",
+          "lucky",
+          "jwyjohn",
+          "繁芜",
+          "冷面魔男戴佳伟",
+          "ZJX",
+          "冯小东",
+          "戴秋璐",
+          "傅薏帆",
+          "孙致远",
+          "薛定没有饿",
+          "戴仁杰",
+          "39music",
+          "蔡明宏",
+          "田阿润奇",
+          "zqr",
+          "白珂睿",
+          "1951931",
+          "王杨乐",
+          "王铭邦",
+          "知屿",
+          "VenusHui",
+          "朱洵缘",
+          "陈家辉",
+          "吴笛",
+          "陈宇田",
+          "吴杨",
+          "金逸",
+          "李俊杰",
+          "安江涛",
+          "冰淇淋",
+          "sgc",
+          "杜奇蔚",
+          "takuka",
+          "啦啦啦",
+          "张勤杭",
+          "zb2333",
+          "李志恺",
+          "刘畅",
+          "刘野平",
+          "龚况驰宇",
+          "肖筱游",
+          "袁枫烨",
+          "陈柯羲",
+          "啊啊啊啊啊",
+          "马启越",
+          "罗斌江",
+          "zst",
+          "韩可欣",
+          "star",
+          "阮辰伟",
+          "KEN",
           "www",
-          "归海记忆",
-          "OliverShang",
-          "redefinition",
-          "+1",
-          "Joe",
-          "加油",
-          "左脑",
-          "??"
+          "XYM",
+          "谭世杰",
+          "王艳天",
+          "翟晨昊",
+          "朱西蒙",
+          "陈敬麒",
+          "老白",
+          "Tzreal"
         ],
         survive: [
 
